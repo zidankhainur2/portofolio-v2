@@ -1,5 +1,5 @@
-import React from "react";
-import Tilt from "react-tilt";
+import React, { useRef, useEffect } from "react";
+import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -7,20 +7,33 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
+// Tilt wrapper
+const Tilt = ({ children, options, className }) => {
+  const tiltRef = useRef(null);
+
+  useEffect(() => {
+    if (tiltRef.current) {
+      VanillaTilt.init(tiltRef.current, options);
+    }
+  }, [options]);
+
+  return (
+    <div ref={tiltRef} className={className}>
+      {children}
+    </div>
+  );
+};
+
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt
+    options={{ max: 45, scale: 1, speed: 450 }}
+    className="xs:w-[250px] w-full"
+  >
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
+      <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
         <img
           src={icon}
           alt="web-development"
@@ -49,15 +62,7 @@ const About = () => {
       >
         A third-year Informatics student at Universitas Singaperbangsa Karawang
         with a strong interest in web development, particularly as a Fullstack
-        Web Developer. Through my project experiences, I have gained expertise
-        in various web development technologies such as HTML, CSS, JavaScript,
-        React, Next.js, and Golang. Additionally, I have experience using
-        frameworks like Tailwind CSS to build responsive and visually appealing
-        web interfaces. I possess the ability to work independently or
-        collaboratively within a team and am always enthusiastic about learning
-        new technologies. With a strong sense of curiosity and a passion for
-        continuous learning, I am ready to contribute to real-world projects in
-        today's tech industry.
+        Web Developer...
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

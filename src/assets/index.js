@@ -30,7 +30,13 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import savebill from "./savebill.png";
+import izanagi from "./izanagi.png";
+import netflix from "./netflix.png";
 import logo2 from "./logo2.png";
+
+import dann from "./dann.svg";
+
+import cv from "./cv.pdf";
 
 export {
   logo,
@@ -63,4 +69,8 @@ export {
   jobit,
   tripguide,
   savebill,
+  izanagi,
+  dann,
+  netflix,
+  cv,
 };

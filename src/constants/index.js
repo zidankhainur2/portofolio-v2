@@ -21,9 +21,11 @@ import {
   shopify,
   carrent,
   savebill,
+  izanagi,
   jobit,
   tripguide,
   threejs,
+  netflix,
 } from "../assets";
 
 export const navLinks = [
@@ -47,17 +49,17 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "React Developer",
     icon: mobile,
   },
   {
     title: "Backend Developer",
     icon: backend,
   },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
+  // {
+  //   title: "Content Creator",
+  //   icon: creator,
+  // },
 ];
 
 const technologies = [
@@ -220,30 +222,30 @@ const projects = [
     source_code_link: "https://github.com/zidankhainur2/savebill",
   },
   {
-    name: "Job IT",
+    name: "Izanagi Store",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Izanagi Store is a E-commerce website that focuse on sale clothes, Built with React, Next.js, and Golang, Savebill promotes efficiency through a user-friendly interface.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "mongodb",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "ecommerce",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: izanagi,
+    source_code_link: "https://github.com/zidankhainur2/izanagi-store",
   },
   {
-    name: "Trip Guide",
+    name: "Netflix Clone",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Netflix clone with some configurantions Built with React, Next.js, and Golang, Savebill promotes efficiency through a user-friendly interface.",
     tags: [
       {
         name: "nextjs",
@@ -254,11 +256,11 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "next-auth",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: netflix,
     source_code_link: "https://github.com/",
   },
 ];
